@@ -17,7 +17,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         ADD_LABEL: "approved"
         REMOVE_LABEL: "awaiting%20review"
-      - uses: actions/upload-artifact@master
+    - uses: actions/upload-artifact@master
     needs: build
           name: webpack artifacts
           path: public/
