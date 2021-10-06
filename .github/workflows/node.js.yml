@@ -6,6 +6,7 @@ name: Node CI
 on: [push]
 
 jobs:
+- uses: actions/upload-artifact@master
   labelWhenApproved:
     name: Label when approved
     runs-on: ubuntu-latest
@@ -17,7 +18,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         ADD_LABEL: "approved"
         REMOVE_LABEL: "awaiting%20review"
-    - uses: actions/upload-artifact@master
+    
     needs: build
           name: webpack artifacts
           path: public/
